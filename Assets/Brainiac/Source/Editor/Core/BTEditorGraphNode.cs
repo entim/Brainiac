@@ -252,14 +252,29 @@ namespace BrainiacEditor
 				Rect imgPosition;
 				if(m_node is NodeGroup)
 				{
-					imgPosition = new Rect(position.x + 2, position.y + 2, 12, 12);
+					imgPosition = new Rect(position.x + nodeSize.x - 14, position.y + nodeSize.y - 12, 12, 12);
 				}
 				else
 				{
-					imgPosition = new Rect(position.x - 14, position.y + 2, 12, 12);
+					imgPosition = new Rect(position.x + nodeSize.x - 14, position.y + nodeSize.y - 14, 12, 12);
 				}
 				
 				GUI.DrawTexture(imgPosition, BTEditorStyle.Breakpoint);
+			}
+
+			if (m_node.Constraints.Count > 0)
+			{
+				Rect imgPosition;
+				if (m_node is NodeGroup)
+				{
+					imgPosition = new Rect(position.x + 2, position.y + nodeSize.y - 12, 12, 12);
+				}
+				else
+				{
+					imgPosition = new Rect(position.x + 2, position.y + nodeSize.y - 14, 12, 12);
+				}
+
+				GUI.DrawTexture(imgPosition, BTEditorStyle.Constraint);
 			}
 		}
 

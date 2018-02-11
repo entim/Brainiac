@@ -12,6 +12,7 @@ namespace BrainiacEditor
 		private static Texture m_arrowDown;
 		private static Texture m_breakpoint;
 		private static Texture m_optionsIcon;
+		private static Texture m_constraint;
 
 		private static BTGraphNodeStyle m_compositeStyle;
 		private static BTGraphNodeStyle m_decoratorStyle;
@@ -65,6 +66,12 @@ namespace BrainiacEditor
 			get
 			{
 				return m_optionsIcon;
+			}
+		}
+
+		public static Texture Constraint {
+			get {
+				return m_constraint;
 			}
 		}
 
@@ -252,6 +259,11 @@ namespace BrainiacEditor
 			if(m_optionsIcon == null)
 			{
 				m_optionsIcon = Resources.Load<Texture>("Brainiac/EditorGUI/options_icon");
+			}
+
+			if (m_constraint == null)
+			{
+				m_constraint = Resources.Load<Texture>("Brainiac/EditorGUI/constraint");
 			}
 		}
 
